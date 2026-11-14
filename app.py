@@ -31,14 +31,14 @@ with tab1:
         fig = px.line(df, x='frame_idx', y=['intensity_1', 'intensity_2', 'intensity_3'],
                       labels={'value': 'Pixel Intensity', 'frame_idx': 'Frame Index', 'variable': 'Sensor Channel'},
                       title="Raw Flame Intensity over Time")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
         
         st.markdown("---")
         col1, col2 = st.columns(2)
         with col1:
-            st.image(Image.open('assets/demo_screenshots/flame_high.png'), caption="Stable Flame (High Intensity)", use_container_width=True)
+            st.image(Image.open('assets/demo_screenshots/flame_high.png'), caption="Stable Flame (High Intensity)", width='content')
         with col2:
-            st.image(Image.open('assets/demo_screenshots/flame_low.png'), caption="Near-Extinction Flame (Low Intensity)", use_container_width=True)
+            st.image(Image.open('assets/demo_screenshots/flame_low.png'), caption="Near-Extinction Flame (Low Intensity)", width='content')
 
 # ==========================================
 # TAB 2: AI Safety Insights (PINN)
@@ -91,7 +91,7 @@ with tab2:
                                  xaxis_title="Frame Index",
                                  yaxis_title="Pixel Intensity")
             
-            st.plotly_chart(fig_ai, use_container_width=True)
+            st.plotly_chart(fig_ai, width='content')
             
             st.success("✅ Note how the PINN curve smoothly interpolates the data and strictly avoids dropping below zero, enforcing physical laws.")
             
@@ -119,7 +119,7 @@ with tab3:
         st.markdown("**Fuel:** Methane (CH4)")
         st.markdown("**Characteristic:** Blue, hemispherical flame. Minimal soot production.")
         try:
-            st.image('assets/demo_screenshots/flame_high.png', caption="SLICE Microgravity Flame", use_container_width=True)
+            st.image('assets/demo_screenshots/flame_high.png', caption="SLICE Microgravity Flame", width='content')
         except:
             st.warning("SLICE image not found.")
             
@@ -134,7 +134,7 @@ with tab3:
         st.markdown("**Characteristic:** Yellow, elongated flame. High soot production, leading to smoke points.")
         try:
             # Make sure you named your telemetry image this!
-            st.image('assets/demo_screenshots/spice_telemetry.png', caption="SPICE Flame with Telemetry Overlay", use_container_width=True)
+            st.image('assets/demo_screenshots/spice_telemetry.png', caption="SPICE Flame with Telemetry Overlay", width='content')
         except:
             st.warning("SPICE image not found.")
             
@@ -154,4 +154,4 @@ with tab3:
         "Flow Rate (SCCM)": [0, 125, 250, 375, 500],
         "Output (V)": [0, 1.266, 2.503, 3.741, 5.0]
     })
-    st.dataframe(calib_data, use_container_width=True, hide_index=True)
+    st.dataframe(calib_data, width='content', hide_index=True)

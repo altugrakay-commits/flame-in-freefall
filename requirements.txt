@@ -2,6 +2,6 @@ streamlit
 pandas
 plotly
 torch
-xlrd==2.0.1
+xlrd>=2.0.2
 openpyxl
 Pillow
