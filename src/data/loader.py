@@ -11,7 +11,7 @@ def load_slice_timeseries(filepath):
         return None
 
     # Read the excel file without headers
-    df = pd.read_excel(filepath, header=None)
+    df = pd.read_excel(filepath, header=None, engine='xlrd')
 
     # Assign column names based on the visual inspection of the data.
     # A: Frame/Index, B: Time, C: Exposure/Shutter, D: Unknown, E/F/G: Pixel intensities.
