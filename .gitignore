@@ -1,0 +1,21 @@
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+metal_final/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter (just in case)
+.ipynb_checkpoints
